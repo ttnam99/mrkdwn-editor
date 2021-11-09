@@ -1,0 +1,40 @@
+.toolBar {
+    z-index: 1;
+    height: 64px;
+    width: 100%;
+    padding: spacing(0, 5);
+}
+.topPage {
+    min-height: 100px;
+    background-color: transparent;
+    padding-bottom: 4rem;
+    width: 100%;
+    z-index: 1;
+  }
+  .pageBackground {
+    min-height: 100px;
+    background-color: transparent;
+    width: 100%;
+    z-index: 1;
+  }
+  .buttonBar {
+    height: "30px";
+    background-color: transparent;
+  }
+  .outerContainer{
+    min-height: 80vh;
+    max-height: 80vh;
+  }
+  .editorContainer {
+    min-height: 100%;
+    max-height: 80vh;
+    max-width: "50vw";
+  }
+  .previewContainer {
+    min-height: 100%;
+    max-height: 80vh;
+    max-width: 50vw;
+    overflow: auto;
+    background-color: white;
+    padding:0 2rem;
+  }
