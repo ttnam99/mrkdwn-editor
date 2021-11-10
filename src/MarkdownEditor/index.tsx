@@ -17,11 +17,15 @@ interface MarkdownEditorProps {}
 
 const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = (props) => {
   const [text, setText] = useState(`abc
-    \`\`\`
-    aaa
-    \`\`\`
-    
-    ![abc](https://upload.wikimedia.org/wikipedia/vi/a/a7/Nodejs_logo_light.png)`);
+\`\`\`
+sequenceDiagram
+A->> B: Query
+B->> C: Forward query
+Note right of C: Thinking...
+C->> B: Response
+B->> A: Forward response
+\`\`\`
+![abc](https://upload.wikimedia.org/wikipedia/vi/a/a7/Nodejs_logo_light.png)`);
 
   //handle text input
   const textCursor = useRef<HTMLTextAreaElement>(null);
@@ -65,43 +69,58 @@ const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = (props) => {
       <Space size="middle" direction="vertical">
         <Header className="toolBar">
           <Row gutter={4} align="middle">
-          <Col><Typography.Title level={5} style={{color:"whitesmoke",margin:'0',paddingRight:'2rem'}}>Simple Markdown Editor</Typography.Title></Col>
             <Col>
-            <Button
-              type="primary"
-              icon={<BoldOutlined />}
-              size="middle"
-              onClick={() => addTextAroundCursor(`**`, `**`)}
-            /></Col>
+              <Typography.Title
+                level={5}
+                style={{
+                  color: "whitesmoke",
+                  margin: "0",
+                  paddingRight: "2rem",
+                }}
+              >
+                Simple Markdown Editor
+              </Typography.Title>
+            </Col>
             <Col>
-            <Button
-              type="primary"
-              icon={<ItalicOutlined />}
-              size="middle"
-              onClick={() => addTextAroundCursor(`*`, `*`)}
-            /></Col>
+              <Button
+                type="primary"
+                icon={<BoldOutlined />}
+                size="middle"
+                onClick={() => addTextAroundCursor(`**`, `**`)}
+              />
+            </Col>
             <Col>
-            <Button
-              type="primary"
-              icon={<StrikethroughOutlined />}
-              size="middle"
-              onClick={() => addTextAroundCursor(`~~`, `~~`)}
-            /></Col>
+              <Button
+                type="primary"
+                icon={<ItalicOutlined />}
+                size="middle"
+                onClick={() => addTextAroundCursor(`*`, `*`)}
+              />
+            </Col>
             <Col>
-            <Button
-              type="primary"
-              icon={
-                <FontSizeOutlined />}
-              size="middle"
-              onClick={() => addTextAroundCursor(`## `, ``)}
-            /></Col>
+              <Button
+                type="primary"
+                icon={<StrikethroughOutlined />}
+                size="middle"
+                onClick={() => addTextAroundCursor(`~~`, `~~`)}
+              />
+            </Col>
             <Col>
-            <Button
-              type="primary"
-              icon={<UnorderedListOutlined />}
-              size="middle"
-              onClick={() => addTextAroundCursor(`- `, ``)}
-            /></Col>
+              <Button
+                type="primary"
+                icon={<FontSizeOutlined />}
+                size="middle"
+                onClick={() => addTextAroundCursor(`## `, ``)}
+              />
+            </Col>
+            <Col>
+              <Button
+                type="primary"
+                icon={<UnorderedListOutlined />}
+                size="middle"
+                onClick={() => addTextAroundCursor(`- `, ``)}
+              />
+            </Col>
           </Row>
         </Header>
         {/*buttons bar */}

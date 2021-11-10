@@ -62,7 +62,6 @@ const TextEditor: FunctionComponent<TextEditorProps> = ({textCursor,...props}) =
       }}
       className="txtEditor"
       onPaste={handlePaste}
-      defaultValue={props.textData}
       value={props.textData}
     ></textarea>
   );
