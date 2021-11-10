@@ -1,5 +1,4 @@
-import React, { FC } from 'react';
-import { Button } from 'antd';
+import { FC } from 'react';
 import './App.css';
 import MarkdownEditor from './MarkdownEditor';
 
